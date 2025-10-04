@@ -59,3 +59,4 @@ coverage/
 /.history/
 
 # If you want to keep build artifacts in version control, remove the build/dist/out lines above.
+.vercel
