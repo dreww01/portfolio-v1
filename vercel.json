@@ -4,12 +4,20 @@
     {
       "src": "src/index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "src/css/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/js/*",
+      "use": "@vercel/static"
     }
   ],
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "src/index.html"
+      "destination": "/src/index.html"
     }
   ],
   "cleanUrls": true,
