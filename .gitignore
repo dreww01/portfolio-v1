@@ -20,7 +20,7 @@ tests/
 dist/
 build/
 out/
-public/
+# public/
 .cache/
 parcel-cache/
 .vite/
