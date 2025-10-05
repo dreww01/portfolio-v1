@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch",
-    "build": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --minify"
+    "build": "node -e \"require('fs').mkdirSync('dist', { recursive: true })\" && tailwindcss -i ./src/css/input.css -o ./dist/output.css --minify && node -e \"const fs=require('fs'),path=require('path');function copy(src,dest){if(!fs.existsSync(src))return;const s=fs.statSync(src);if(s.isDirectory()){if(!fs.existsSync(dest))fs.mkdirSync(dest,{recursive:true});for(const f of fs.readdirSync(src))copy(path.join(src,f),path.join(dest,f));}else{fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(src,dest);}};copy('src/index.html','dist/index.html');copy('public/js','dist/js');copy('public/images','dist/images');\"",
+    "start": "npx serve dist --listen 5000",
+    "preview": "npm run build && npx serve dist --listen 5000"
   },
   "keywords": [],
   "author": "",
